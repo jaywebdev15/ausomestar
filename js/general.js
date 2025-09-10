@@ -38,15 +38,24 @@ textArea.addEventListener('keyup', e => {
 
 
 submit.addEventListener("click", () => {
-	if(fullname.value.length < 10 || contact.value.length < 10 || concern.value.length < 100) {
-		flashMessage.innerText = "Please fill all the fields";
-		flashMessage.classList.add("failed");
-		setTimeout(() => {
-			flashMessage.classList.remove("failed");
-		}, 2000);
+	if(fullname.value.length < 10) {
+		message = "Full name should atleast 10 characters.";
+		messageStatus = "failed";
+	} else if(contact.value.length < 10) {
+		message = "Contact should atleast 10 characters.";
+		messageStatus = "failed";
+	} else if (concern.value.length < 20) {
+		message = "Comment and concern should atleast 20 characters.";
+		messageStatus = "failed";
 	} else {
 		sendMessage("insert", fullname.value, contact.value, concern.value);
+		messageStatus = "success";
 	}
+		flashMessage.innerText = message;
+		flashMessage.classList.add(messageStatus);
+		setTimeout(() => {
+			flashMessage.classList.remove(messageStatus);
+		}, 2000);
 });
 
 
@@ -66,18 +75,12 @@ const sendMessage = async (action, fullname, contact, concern) => {
     const data = await response.json();
 
 		flashMessage.innerText = data.message;
-		console.log(data.status)
 
     if (data.status === "success") {
 
 			document.querySelector(".fullname").value = "";
 			document.querySelector(".email").value = "";
 			document.querySelector(".comment").value = "";
-
-			flashMessage.classList.add("success");
-			setTimeout(() => {
-				flashMessage.classList.remove("success");
-			}, 2000);
 
     } else {
 

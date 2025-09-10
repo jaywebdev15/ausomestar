@@ -21,6 +21,7 @@
     $fullname = $data['fullname'] ?? null;
     $contact = $data['contact'] ?? null;
     $concern = $data['concern'] ?? null;
+    $searchInput = $data['searchInput'] ?? null;
 
     switch($action) {
       case "insert":
@@ -52,6 +53,31 @@
         ]);
         $result = $view->fetch(PDO::FETCH_ASSOC);
         echo json_encode($result);
+      break;
+      case "search":
+        $sqlSearch = "SELECT * FROM message WHERE 
+                      fullname  LIKE :fullname  OR 
+                      contact   LIKE :contact   OR 
+                      concern   LIKE :concern";
+        $search = $pdo->prepare($sqlSearch);
+        $search->execute([
+          ":fullname" => "%$searchInput%",
+          ":contact"  => "%$searchInput%",
+          ":concern"  => "%$searchInput%"
+        ]);
+        $results = $search->fetchAll(PDO::FETCH_ASSOC);
+        echo json_encode($results);
+      break;
+      case "delete":
+        $sqlDelete = "DELETE FROM message WHERE id = :id";
+        $delete = $pdo->prepare($sqlDelete);
+        $delete->execute([
+          ":id" => $id
+        ]);
+        echo json_encode([
+          "status" => "failed",
+          "message" => "Message deleted."
+        ]);
       break;
       default:
         echo json_encode([

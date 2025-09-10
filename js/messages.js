@@ -1,6 +1,26 @@
 const tableBody = document.querySelector(".table-body");
 const tBody = document.querySelector(".tbody");
 const modal = document.querySelector(".modal");
+const searchInput = document.querySelector(".searchInput");
+
+
+const truncateText = (text, maxLength = 100) => {
+  if(text.maxLength <= maxLength) return text;
+
+  let truncated = text.slice(0, maxLength);
+
+  const lastSpace = truncated.lastIndexOf(' ');
+  if(lastSpace > 0) {
+    truncated = truncated.slice(0, lastSpace);
+  }
+  return truncated + '...';
+}
+
+
+searchInput.addEventListener("input", (e) => {
+  searchMessage("search", e.target.value);
+});
+
 
 tBody.addEventListener("click", (e) => {  
   const row = e.target.closest("tr");
@@ -25,10 +45,11 @@ const fetchMessage = async () => {
 
     data.forEach(message => {
       html += `
-        <tr data-id="${message.id}">
+        <tr data-id="${message.id}"
+            id="${message.id}">
           <td>${message.fullname}</td>
           <td class="cellContact">${message.contact}</td>
-          <td class="cellConcern">${message.concern}</td>
+          <td class="cellConcern">${truncateText(message.concern)}</td>
         </tr>
       `;
     });
@@ -67,6 +88,54 @@ const viewMessage = async (id, action) => {
     console.error("Error in view fetching message =>", error);
   }
 };
+
+
+const searchMessage = async (action, searchInput) => {
+  try {
+    const response = await fetch("http://localhost/ausomestar/backend/messages.php", {
+      method: "POST", 
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: action,
+        searchInput: searchInput
+      })
+    });
+    const data = await response.json();
+  
+    let html = "";
+  
+    data.forEach(message => {
+      html += `
+        <tr data-id="${message.id}">
+          <td>${message.fullname}</td>
+          <td class="cellContact">${message.contact}</td>
+          <td class="cellConcern">${truncateText(message.concern)}</td>
+        </tr>
+      `;
+    });
+  
+    tBody.innerHTML = html;
+  } catch (error) {
+    console.log("Error in searhing message =>", error);
+  }
+}
+
+
+const deleteMessage = async (action, id) => {
+  try {
+    await fetch("http://localhost/ausomestar/backend/messages.php", {
+      method: "POST",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        action: action,
+        id: id
+      })
+    });
+    fetchMessage();
+  } catch (error) {
+    console.log("Error in deleting message =>", error);
+  }
+}
 
 
 fetchMessage();

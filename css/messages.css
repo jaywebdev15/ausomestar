@@ -18,6 +18,12 @@ main {
   padding: 1rem;
 }
 
+.searchInput {
+  outline: none;
+  border-radius: .3rem;
+  padding: .5rem;
+}
+
 .table-body {
   display: flex;
   flex-direction: column;
@@ -88,12 +94,18 @@ table {
 
   thead th {
     background-color: #FFF9E3;
+    font-size: small;
   }
 
   th, td {
     text-align: left;
     align-content: start;
     border: none;
+    padding: 2px 5px;
+  }
+
+  td {
+    font-size: smaller;
   }
 
   tr:nth-child(even) {
