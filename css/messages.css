@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&family=Barlow:wght@100;200;300;400;500;600;700&family=Cabin+Sketch:wght@400;700&family=Chewy&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&family=Miltonian&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ribeye+Marrow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vast+Shadow&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Comic Neue", "Poppins", sans-serif;
+}
+
+
+main {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #FBFCF8;
+  padding: 1rem;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all .5s ease-in-out;
+}
+
+.table-body.inactive {
+  background: #d3d3d361;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  gap: .5rem;
+  background-color: aliceblue;
+  padding: 1rem;
+  margin: 1rem;
+  max-height: 80vh;
+  border-radius: 5px;
+  word-break: break-all;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all .5s ease-in-out;
+
+  .concern {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: .5rem;
+    padding: 1rem 0;
+  }
+
+  .closeModal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+
+  transition: all .5s ease-in-out;
+}
+
+table {
+  border-collapse: collapse;
+
+  .cellContact,
+  .cellConcern {
+    word-break: break-all;
+  }
+
+  thead th {
+    background-color: #FFF9E3;
+  }
+
+  th, td {
+    text-align: left;
+    align-content: start;
+    border: none;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fffcf2;
+  }
+
+  tr:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+  }
+}
+

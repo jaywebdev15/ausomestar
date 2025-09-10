@@ -1,0 +1,1572 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&family=Barlow:wght@100;200;300;400;500;600;700&family=Cabin+Sketch:wght@400;700&family=Chewy&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=League+Spartan:wght@100..900&family=Miltonian&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ribeye+Marrow&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vast+Shadow&display=swap');
+
+@font-face {
+  font-family: Babelgam;
+  src:url(../fonts/Babelgam.ttf)
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Comic Neue", "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding: 70px;
+}
+
+@media(max-width:1030px) {
+
+  html {
+    scroll-padding: 0;
+  }
+
+}
+
+
+.flashMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a5ffa5;
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  z-index: 100;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+.flashMessage.success {
+  background-color: #a5ffa5;
+  transition: all 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.flashMessage.failed {
+  background-color: #ffa8a8;
+  transition: all 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+.container{
+  height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home Section */
+/* Home Section */
+/* Home Section */
+
+#home {
+  background-image: url("../images/background-home.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  transition: 0.4s all ease;
+  position: relative;
+}
+
+#home .left-section {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#home .design img {
+  height: 45rem;
+  width: 45rem;
+}
+
+#home .left-section .text-design {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 35rem;
+  position: absolute;
+  top: 150px;
+  z-index: 2;
+}
+
+#home .text-design .abc-image {
+  position: absolute;
+  height: 200px;
+  width: 230px;
+  bottom: -250px;
+  right: 30px;
+  transform: translateX(-30%);
+  background-image: url("../images/abc.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#home .ausome-star p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+#home .where-every p {
+  font-family: "Comic Neue";
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 15px gray;
+}
+
+#home .child-shine p {
+  font-family: "Comic Neue";
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 1px 1px 15px gray;
+}
+
+#home .paragraph {
+  width: 90%;
+  text-wrap: wrap;
+}
+
+#home .paragraph p {
+  font-size: 1.2rem;
+  color: #075d43;
+}
+
+#home .back-button {
+  position: relative;
+  margin-top: 30px;
+  height: 2.5rem;
+  width: 9rem;
+  border-radius: 8px;
+  background: black;
+  transform: rotate(4deg);
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+#home .button {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 5px;
+  text-decoration: none;
+  color: white;
+  transform: rotate(-4deg);
+  justify-content: center;
+  align-items: center;
+  background-color: #075d43;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+}
+
+#home .button i {
+  font-size: 1.5rem;
+}
+
+#home .right-section {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home .right-section .kid-image img {
+  height: 35rem;
+  width: 35rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50px;
+}
+
+
+@media (max-width: 1200px) {
+
+  #home .design img {
+    height: 35rem;
+    width: 35rem;
+  }
+  
+  #home .left-section .text-design{
+    top: 120px;
+    width: 50%;
+  }
+  
+  #home .left-section .text-design .where-every p {
+    font-size: 3rem;
+  }
+  
+  #home .left-section .text-design .child-shine p {
+    font-size: 3rem;
+  }
+  
+  #home .left-section .text-design .paragraph p {
+    font-size: 1rem;
+  }
+
+  #home .left-section .text-design .back-button {
+    height: 2rem;
+    width: 7rem;
+    font-size: .8rem;
+  }
+
+  #home .right-section .kid-image img {
+    height: 25rem;
+    width: 25rem;
+  }
+
+}
+
+
+@media (max-width: 1030px) {
+
+  #home {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 5rem;
+  }
+
+  #home .left-section {
+    margin-bottom: 35rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  #home .left-section .text-design {
+    top: 100px;
+    width: 50%;
+    align-self: flex-start;
+  }
+
+  #home .left-section .text-design .abc-image{
+    top: 18rem;
+    right: -1rem;
+    height: 50%;
+    width: 50%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  #home {
+    padding: 3rem 2rem;
+  }
+
+  #home .left-section .text-design{
+    top: 80px;
+    width: 80%;
+  }
+
+  #home .design {
+    width: 100%;
+  }
+
+  #home .design img {
+    width: inherit;
+    height: inherit;
+  }
+
+  #home .right-section {
+    height: 100%;
+    width: 100%;
+  }
+
+  #home .right-section .kid-image img{
+    height: 20rem;
+    width: 20rem;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  #home .left-section {
+    margin-bottom: 25rem;
+  }
+
+  #home .left-section .text-design .where-every p, 
+  #home .left-section .text-design .child-shine p {
+    font-size: 2rem;
+  }
+
+  #home .left-section .text-design .paragraph p{
+    font-size: .8rem;
+  }
+
+  #home .left-section .text-design .abc-image{
+    top: 13rem;
+    right: -1rem;
+    height: 50%;
+    width: 50%;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  #home {
+    padding: 2rem 1rem;
+  }
+
+}
+
+/* About Section */
+/* About Section */
+/* About Section */
+
+
+
+#about {
+  background-image: url("../images/background-about.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 70px 5rem;
+  transition: 0.4s all ease;
+  height: 100%;
+  gap: 70px;
+}
+
+#about .top-section {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#about .left-section {
+  display: flex;
+  gap: 4rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: calc(100% - 10px);
+  width: 50%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#about .left-section .about-us {
+  display: flex;
+  transform: rotate(-4deg);
+  justify-content: center;
+  align-items: center;
+  background-color: #075d43;
+  height: 45px;
+  width: 150px;
+  border-radius: 8px;
+  position: relative;
+  color: white;
+  font-family: "Comic Neue";
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 2rem;
+  padding-right: 1rem;
+}
+
+#about .left-section .about-us::after {
+  position: absolute;
+  content: "";
+  top: 6px;
+  right: -12px;
+  height: 33px;
+  width: 33px;
+  background-color: #075d43;
+  border-radius: 5px;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+#about .left-section .about-text p {
+  font-size: 1.2rem;
+  color: #075d43;
+  width: 90%;
+}
+
+#about .left-section .read-more {
+  font-size: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #075d43;
+  height: 2rem;
+  width: 8.5rem;
+  border-radius: 50px;
+  color: white;
+  font-family: "Comic Neue";
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#about .left-section .read-more .read-more-image {
+  position: absolute;
+  top: -1;
+  right: 0px;
+  transform: translateX(15%);
+  background-color: white;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: 2px solid #fcede6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .left-section .read-more .read-more-image i{
+  color: #075d43;
+  font-size: 1.5rem;
+}
+
+#about .right-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+}
+
+#about .right-section img {
+  margin-top: 3rem;
+  height: 80%;
+  width: 80%;
+}
+
+#about .bottom-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 5rem;
+}
+
+#about label {
+  font-family: "Comic Neue";
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #075d43;
+  border-radius: 50px;
+}
+
+#about .bottom-section .benefit-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#about .benefits {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  margin-top: 40px;
+  padding: 15px;
+  gap: 10px;
+}
+
+#about .b-hand:hover,
+#about .b-graduation:hover {
+  background-color: #e9af00;
+}
+
+#about .b-basketball:hover,
+#about .b-sun:hover {
+  background-color: #075d43;
+}
+
+#about .benefits img {
+  height: 4rem;
+  width: 4rem;
+}
+
+#about .b-graduation img {
+  height: 4rem;
+  width: 5rem;
+}
+
+#about .b-hand,
+#about .b-graduation {
+  border: 1px solid #e9af00;
+  border-radius: 5px;
+}
+
+#about .benefits .hand, 
+#about .benefits .graduation,
+#about .b-hand p, 
+#about .b-graduation p{
+  color: #075d43;
+}
+
+#about .b-basketball,
+#about .b-sun {
+  border: 1px solid #075d43;
+  border-radius: 5px;
+}
+
+#about .benefits .basketball, 
+#about .benefits .sun {
+  color: #e9af00;
+}
+
+#about .benefits .basketball, 
+#about .benefits .sun,
+#about .b-basketball p, 
+#about .b-sun p {
+  color: #e9af00;
+}
+
+#about .benefits .benefit-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#about .benefits .benefit-text p {
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 1rem;
+}
+
+
+@media (max-width: 1050px) {
+
+  #about label{
+    top: -1.5rem;
+    font-size: 2rem;
+  }
+
+}
+
+
+@media (max-width: 950px) {
+
+  #about .bottom-section .benefit-container{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  #about {
+    padding: 3rem 2rem;
+    padding-top: 0;
+  }
+
+  #about .top-section {
+    flex-direction: column;
+  }
+
+  #about .top-section .left-section{
+    width: 100%;
+  }
+
+  #about .top-section .right-section{
+    width: 100%;
+  }
+
+  #about .bottom-section .benefit-container{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 30px;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  #about .bottom-section label {
+    font-size: 1.75rem;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  #about {
+    padding: 2rem 1rem;
+    padding-top: 0;
+  }
+
+  #about .bottom-section label {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+
+/* Services Section */
+/* Services Section */
+/* Services Section */
+
+
+
+#services{
+  background-image: url("../images/green-background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  transition: 0.4s all ease;
+  padding-bottom: 30px;
+} 
+
+#services .top-section {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#services .top-section .img {
+  background-image: url("../images/services-title.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#services .top-section .img .title-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+#services .top-section .img .title-services h1 {
+  font-family: "League Spartan";
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px black;
+}
+
+#services .top-section .img .title-services span {
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  text-shadow: 2px 2px 5px black;
+  position: relative;
+}
+
+#services .top-section .img .title-services span::before {
+  position: absolute;
+  content: "";
+  left: -60px;
+  top: 12px;
+  height: 1px;
+  width: 50px;
+  background-color: black;
+}
+
+#services .top-section .img .title-services span::after {
+  position: absolute;
+  content: "";
+  right: -60px;
+  top: 12px;
+  height: 1px;
+  width: 50px;
+  background-color: black;
+}
+
+#services .middle-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#services .middle-section .service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 0.5px solid #e9af00;
+  border-radius: 15px;
+  padding: 10px;
+  gap: 10px;
+  font-family: "Poppins";
+  max-width: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+#services .middle-section .service::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  transform: translateY(50%);
+  width: 80%;
+  bottom: 0;
+  box-shadow: 10px 0 20px #000000b0;
+  background-color: #00000062;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+#services .middle-section .service .service-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+#services .middle-section .service .service-title img{
+  height: 60px;
+  width: 60px;
+}
+
+#services .middle-section .service .service-title .title{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1.2rem;
+}
+
+#services .middle-section .service .service-title .title span{
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#services .middle-section .service .service-title .title .top{
+  color: #e9af00;
+}
+
+#services .middle-section .service .service-title .title .bottom{
+  color: white;
+}
+
+#services .middle-section .service .content{
+  height: 230px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  font-family: "Comic Neue";
+  font-size: 1.2rem;
+}
+
+#services .middle-section .service .content ul{
+  margin-left: 20px;
+}
+
+#services .middle-section .read-more button{
+  height: 30px;
+  width: 90px;
+  border: none;
+  border-radius: 45px;
+  font-weight: 600;
+  color: #075d43;
+  background-color: #e9af00;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  margin-bottom: 15px;
+}
+
+#services .middle-section .read-more button:hover{
+  background-color: transparent;
+  color: #e9af00;
+  border: 0.5px solid #e9af00;
+}
+
+#services .bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 20px;
+}
+
+#services .bottom-section h1 {
+  font-family: "Chewy";
+  font-size: 3rem;
+}
+
+#services .bottom-section .choose-text {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-family: "Comic Neue";
+  text-align: center;
+}
+
+@media (max-width: 950px) {
+  
+  #services .middle-section {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #services {
+    padding: 3rem 2rem;
+    padding-top: 0;
+  }
+  
+  #services .middle-section {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    gap: 30px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  #services {
+    padding: 2rem 1rem;
+    padding-top: 0;
+  }
+
+}
+
+
+
+/* Testimonial Section  */
+/* Testimonial Section  */
+/* Testimonial Section  */
+
+
+
+#testimonial {
+  background-image: url("../images/background-about.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  transition: 0.4s all ease;
+  padding-bottom: 30px;
+} 
+
+#testimonial .top-section {
+  font-family: "Barlow Condensed";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #075d43;
+  line-height: 2.5rem;
+  margin-top: 1rem;
+} 
+
+#testimonial .top-section .word {
+  font-size: 2rem;
+} 
+
+#testimonial .top-section .gratitude {
+  font-size: 5rem;
+  font-weight: 700;
+} 
+
+#testimonial .middle-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} 
+
+.middle-section .swiper {
+  height: 500px;
+  width: 600px;
+  padding-top: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.swiper-wrapper {
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  transition: transform .45s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  transition: opacity 0.5s;
+}
+
+.swiper-slide .comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/comment_box.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 1rem;
+  padding: 30px 45px;
+  gap: 30px;
+  color: white;
+  font-family: "Comic Neue";
+}
+
+.swiper-slide .comment-container .top .full-name {
+  font-family: "Barlow Condensed";
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.swiper-slide .comment-container .top .name {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+}
+
+.swiper-slide .comment-container .middle {
+  margin-left: 10px;
+  height: 150px;
+  overflow: auto;
+}
+
+.swiper-slide .comment-container .top,
+.swiper-slide .comment-container .middle,
+.swiper-slide .comment-container .bottom {
+  text-align: start;
+  margin-left: 10px;
+}
+
+.swiper-slide .comment-container .bottom span {
+  font-size: 3rem;
+  color: #e9af00;
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: -500px;
+}
+
+.swiper-slide.active {
+  opacity: 1;
+}
+
+button.prev, 
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #b13c5547;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  z-index: 50;
+}
+
+button.prev { 
+  left: 10px; 
+}
+
+button.next { 
+  right: 10px; 
+}
+
+
+@media (max-width: 950px) {
+  .middle-section .swiper {
+    width: 400px;
+  }
+
+  .swiper-slide .comment-container {
+    padding: 40px 40px;
+    gap: 10px;
+  }
+
+  .swiper-slide .comment-container .top .name {
+    padding-left: 30px;
+  }
+
+  .swiper-slide .comment-container .top .full-name {
+    font-size: 1rem;
+  }
+
+  .swiper-slide .comment-container .top .name {
+    font-size: .8rem;
+  }
+
+  .swiper-slide .comment-container .middle {
+    font-size: .7rem;
+    height: 8rem;
+  }
+
+  .swiper-slide .comment-container .bottom span {
+    font-size: 2rem;
+    color: #e9af00;
+  }
+}
+
+@media (max-width: 600px) {
+  #testimonial {
+    padding: 3rem 2rem;
+  }
+
+  #testimonial .top-section .word {
+    font-size: 1.5rem;
+  }
+
+  #testimonial .top-section .gratitude {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .middle-section .swiper {
+    width: 300px;
+  }
+
+  .swiper-slide .comment-container {
+    padding: 0 20px;
+    gap: 5px;
+  }
+
+  .swiper-slide .comment-container .top .name {
+    padding-left: 25px;
+  }
+
+  .swiper-slide .comment-container .top .full-name {
+    font-size: 1rem;
+  }
+
+  .swiper-slide .comment-container .top .name {
+    font-size: .8rem;
+  }
+
+  .swiper-slide .comment-container .middle {
+    font-size: .6rem;
+    height: 5.5rem;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .swiper-slide .comment-container .middle::-webkit-scrollbar {
+    display: none;
+  }
+
+  .swiper-slide .comment-container .bottom span {
+    font-size: 2rem;
+    color: #e9af00;
+  }
+}
+
+@media (max-width: 400px) {
+  #testimonial {
+    padding: 2rem 1rem;
+  }
+}
+
+
+
+
+/* Gallery Section  */
+/* Gallery Section  */
+/* Gallery Section  */
+
+
+
+#gallery{
+  background-image: url("../images/background-about.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+  transition: 0.4s all ease;
+  padding-bottom: 30px;
+  position: relative;
+} 
+
+#gallery .top-section {
+  background-image: url("../images/gallery-heading.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  height: 150px;
+  width: 100%;
+  top: 0;
+  left: 0;
+} 
+
+#gallery::before {
+  position: absolute;
+  content: "";
+  height: 150px;
+  width: 100%;
+  background-color: #075d43a6;
+  z-index: 1;
+} 
+
+#gallery::after {
+  position: absolute;
+  content: "AUSOME STAR";
+  font-family: "Babelgam";
+  z-index: 1;
+  color: white;
+  font-size: 3rem;
+} 
+
+#gallery .middle-section {
+  margin-top: 200px;
+  height: calc(100% - 150px);
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#gallery .middle-section .left-section {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+#gallery .middle-section .left-section .thumbnail {
+  height: 80%;
+  width: 100%;
+}
+
+#gallery .middle-section .left-section .thumbnail img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+#gallery .middle-section .left-section .pictures {
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#gallery .middle-section .left-section .pictures .image-left {
+  height: 100%;
+  width: 50%;
+}
+
+#gallery .middle-section .left-section .pictures .image-right {
+  height: 100%;
+  width: 50%;
+}
+
+#gallery .middle-section .left-section .pictures img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+#gallery .middle-section .right-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+#gallery .middle-section .right-section .title {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#gallery .middle-section .right-section .title span {
+  font-size: 2rem;
+  font-family: "Chewy";
+  text-align: center;
+  color: #075d43;
+}
+
+#gallery .middle-section .right-section .paragraph {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Comic Neue";
+  font-size: 1.3rem;
+  color: #075d43;
+}
+
+@media (max-width: 1200px) {
+
+  #gallery .middle-section .right-section .paragraph {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 950px) {
+
+  #gallery .middle-section {
+    flex-direction: column;
+  }
+
+  #gallery .middle-section .left-section{
+    width: 80%;
+  }
+
+  #gallery .middle-section .right-section {
+    width: 80%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  #gallery {
+    padding: 3rem 2rem;
+    padding-top: 0;
+  }
+
+  #gallery .middle-section .left-section{
+    width: 100%;
+  }
+
+  #gallery .middle-section .right-section{
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  #gallery {
+    padding: 2rem 1rem;
+    padding-top: 0;
+  }
+
+}
+
+
+
+/* Contact Section  */
+/* Contact Section  */
+/* Contact Section  */
+
+
+
+#contact{
+  background-image: url("../images/background_contact.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 5rem;
+  transition: 0.4s all ease;
+  padding-bottom: 30px;
+  position: relative;
+  color: white;
+  font-family: "Comic Neue";
+} 
+
+#contact::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background-color: #075d43b4;
+} 
+
+.contact {
+  z-index: 1;
+}
+
+#contact .top {
+  height: 20%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#contact .top .title {
+  font-family: "Babelgam";
+  font-size: 4rem;
+}
+
+#contact .top .question {
+  font-size: 1.2rem;
+}
+
+#contact .middle {
+  height: 50%;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 100px;
+  gap: 40px;
+
+  .submit {
+    font-size: 1rem;
+    width: 100%;
+    padding: .7rem 0;
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    background-color: #e9af00;
+    border: 1px solid #e9af00;
+    cursor: pointer;
+  }
+
+  .submit:hover {
+    background-color: transparent;
+  }
+
+}
+
+#contact .middle .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#contact .middle .name .text-field:hover ~ label,
+#contact .middle .name .text-field:not(:placeholder-shown):not(:hover) ~ label {
+  transform: translateY(-130%);
+  color: white;
+}
+
+#contact .middle .name .text-field{
+  padding: 15px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  width: 350px;
+  font-size: 1.2rem;
+  font-family: "Comic Neue";
+  box-shadow: 2px 2px 5px gray;
+}
+
+#contact .middle .name .comment{
+  resize: none;
+}
+
+.comment::-webkit-scrollbar {
+  width: 0;
+}
+
+#contact .middle .name label{
+  transition: all 0.4s ease;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  color: darkgray;
+  transform: translateY(65%);
+  pointer-events: none;
+}
+
+#contact .bottom {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+#contact .bottom .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#contact .bottom i {
+  background-color: #e9af00;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 950px) {
+
+  #contact .bottom {
+    gap: 30px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  #contact .bottom {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #contact {
+    padding: 3rem 2rem;
+  }
+
+  #contact .top span{
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+  #contact .middle .name,
+  #contact .middle .name .text-field {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  #contact {
+    padding: 2rem 1rem;
+  }
+
+}

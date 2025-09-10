@@ -1,0 +1,133 @@
+.nav-bar {
+  right: 0;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.5px solid #d3d3d313;
+  padding: 0 50px;
+  z-index: 1000;
+  font-family: "Comic Neue";
+  font-weight: 400;
+  background-color: #cc9b25;
+}
+
+.nav-bar .nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-bar .nav-right ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.nav-bar .nav-right ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-bar .nav-right ul li a {
+  text-decoration: none;
+  line-height: 10px;
+  padding: 25px 10px;
+  color: white;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+
+.menu {
+  /* display: none; */
+  position: fixed;
+  z-index: 1000;
+  top: 10px;
+  right: 10px;
+  font-size: 1.8rem;
+  color: #cc9b25;
+  cursor: pointer;
+}
+
+
+.nav-bar .menu i {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-bar .nav-links::before{
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 100%;
+  bottom: 20%;
+  left: 0;
+  background-color: #e9af00;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transition: all 0.4s ease;
+}
+
+.nav-bar li:hover .nav-links::before{
+  transform: scaleX(1);
+}
+
+
+@media (max-width: 1030px) {
+
+  .nav-bar {
+    padding: 0;
+    background-color: #cc9b25;
+    position: fixed;
+    top: -400px;
+    transition: all 0.4s ease;
+  }
+
+  .nav-bar.show {
+    top: 0;
+  }
+
+  .nav-bar .nav-right {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .nav-bar .nav-right ul {
+    width: inherit;
+    background-color: #cc9b25;
+    transition: all 0.4s ease;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+  }
+
+  .nav-bar .menu {
+    display: block;
+    position: absolute;
+    top: 210px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.8s ease;
+  }
+
+  .nav-bar .menu.hide {
+    display: none;
+  }
+
+  .nav-bar .nav-right ul li a {
+    padding: 1.2rem 100%;
+    font-size: 1.1rem;
+  }
+
+  .nav-bar li:hover .nav-links::before{
+    transform: scaleX(0);
+  }
+
+}
