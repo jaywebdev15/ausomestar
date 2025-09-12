@@ -1,6 +1,7 @@
 const header = document.querySelector('.nav-bar');
 const menu = document.querySelector('.menu');
 const list = document.querySelector('.nav-bar');
+const up = document.querySelector(".up");
 const textArea = document.querySelector(".comment");
 const closed = document.querySelector(".close");
 const fullname = document.querySelector(".fullname");
@@ -15,6 +16,15 @@ document.addEventListener('scroll', () => {
 		header.style.backgroundColor = '#cc9b25';
 	} else {
 		header.style.backgroundColor = 'transparent';
+	}
+});
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 300) {
+		up.classList.add("active");
+	} else {
+		up.classList.remove("active");
 	}
 });
 

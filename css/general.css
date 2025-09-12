@@ -26,6 +26,36 @@ html {
 }
 
 
+.up {
+  transition: all .3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1000;
+  text-decoration: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 5px;
+  font-size: 2rem;
+  color: #e9af00;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #003223;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #003223;
+}
+
+.up.active {
+  transition: all .3s ease;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
 .flashMessage {
   position: fixed;
   top: 50%;
