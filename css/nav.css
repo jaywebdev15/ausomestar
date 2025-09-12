@@ -4,7 +4,7 @@
   height: 70px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
   border-bottom: 0.5px solid #d3d3d313;
   padding: 0 50px;
   z-index: 1000;
@@ -14,10 +14,24 @@
 }
 
 .nav-bar .nav-right {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.nav-right .logo {
+  height: 3rem;
+  width: 13rem;
+  margin-left: 5rem;
+  cursor: pointer;
+}
+
+.nav-right .logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
 }
 
 .nav-bar .nav-right ul {
@@ -44,7 +58,7 @@
 
 
 .menu {
-  /* display: none; */
+  display: none;
   position: fixed;
   z-index: 1000;
   top: 10px;
@@ -81,12 +95,30 @@
 
 @media (max-width: 1030px) {
 
+  .menu {
+    display: flex;
+  }
+
   .nav-bar {
     padding: 0;
     background-color: #cc9b25;
     position: fixed;
-    top: -400px;
+    top: -450px;
     transition: all 0.4s ease;
+    justify-content: start;
+  }
+
+  .nav-right .logo {
+    
+    margin-top: 1rem;
+    padding-left: 0;
+    align-items: start;
+    margin-left: 0;
+  }
+
+  .nav-right .log img {
+    width: 10rem;
+    object-fit: contain;
   }
 
   .nav-bar.show {
@@ -94,8 +126,9 @@
   }
 
   .nav-bar .nav-right {
-    flex-direction: column-reverse;
+    flex-direction: column;
     width: 100%;
+    height: 100%;
   }
 
   .nav-bar .nav-right ul {
@@ -110,7 +143,7 @@
   .nav-bar .menu {
     display: block;
     position: absolute;
-    top: 210px;
+    top: 700px;
     right: 10px;
     z-index: 2;
     cursor: pointer;
@@ -124,6 +157,7 @@
   .nav-bar .nav-right ul li a {
     padding: 1.2rem 100%;
     font-size: 1.1rem;
+    color: #003223;
   }
 
   .nav-bar li:hover .nav-links::before{

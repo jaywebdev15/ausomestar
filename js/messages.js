@@ -2,6 +2,7 @@ const tableBody = document.querySelector(".table-body");
 const tBody = document.querySelector(".tbody");
 const modal = document.querySelector(".modal");
 const searchInput = document.querySelector(".searchInput");
+const api = "http://localhost/ausomestar/backend";
 
 
 const truncateText = (text, maxLength = 100) => {
@@ -38,7 +39,7 @@ document.addEventListener("click", (e) => {
 
 const fetchMessage = async () => {
   try {
-    const response = await fetch("http://localhost/ausomestar/backend/messages.php");
+    const response = await fetch(`${api}/messages.php`);
     const data = await response.json();
 
     let html = "";
@@ -62,7 +63,7 @@ const fetchMessage = async () => {
 
 const viewMessage = async (id, action) => {
   try {
-    const response = await fetch("http://localhost/ausomestar/backend/messages.php", {
+    const response = await fetch(`${api}/messages.php`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -92,7 +93,7 @@ const viewMessage = async (id, action) => {
 
 const searchMessage = async (action, searchInput) => {
   try {
-    const response = await fetch("http://localhost/ausomestar/backend/messages.php", {
+    const response = await fetch(`${api}/messages.php`, {
       method: "POST", 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -123,7 +124,7 @@ const searchMessage = async (action, searchInput) => {
 
 const deleteMessage = async (action, id) => {
   try {
-    await fetch("http://localhost/ausomestar/backend/messages.php", {
+    await fetch(`${api}/messages.php`, {
       method: "POST",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

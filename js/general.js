@@ -9,19 +9,27 @@ const contact = document.querySelector(".email");
 const concern = document.querySelector(".comment");
 const submit = document.querySelector(".submit");
 const flashMessage = document.querySelector(".flashMessage");
+const logo = document.querySelector(".logo");
+const api = "http://localhost/ausomestar/backend";
 
 document.addEventListener('scroll', () => {
 	var scroll_position = window.scrollY;
 	if (scroll_position > 70) {
 		header.style.backgroundColor = '#cc9b25';
+		logo.style.opacity = 1;
 	} else {
 		header.style.backgroundColor = 'transparent';
+		logo.style.opacity = 0;
+		if(window.innerWidth <= 1030) {
+		header.style.backgroundColor = '#cc9b25';
+		logo.style.opacity = 1;
+		}
 	}
 });
 
 document.addEventListener('scroll', () => {
 	var scroll_position = window.scrollY;
-	if (scroll_position > 300) {
+	if (scroll_position > 700) {
 		up.classList.add("active");
 	} else {
 		up.classList.remove("active");
@@ -71,7 +79,7 @@ submit.addEventListener("click", () => {
 
 const sendMessage = async (action, fullname, contact, concern) => {
   try {
-    const response = await fetch("http://localhost/ausomestar/backend/messages.php", {
+    const response = await fetch(`${api}/messages.php`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

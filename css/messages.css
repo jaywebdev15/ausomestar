@@ -22,6 +22,7 @@ main {
   outline: none;
   border-radius: .3rem;
   padding: .5rem;
+  font-size: large;
 }
 
 .table-body {
@@ -94,7 +95,7 @@ table {
 
   thead th {
     background-color: #FFF9E3;
-    font-size: small;
+    font-size: x-large;
   }
 
   th, td {
@@ -105,7 +106,7 @@ table {
   }
 
   td {
-    font-size: smaller;
+    font-size: large;
   }
 
   tr:nth-child(even) {
@@ -118,3 +119,21 @@ table {
   }
 }
 
+@media (max-width: 450px) {
+
+  table {
+
+    thead th {
+      font-size: small;
+    }
+
+    td {
+      font-size: smaller;
+    }
+  }
+
+  .searchInput {
+    font-size: small;
+  }
+
+}

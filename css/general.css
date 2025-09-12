@@ -1471,7 +1471,7 @@ button.next {
 
   .submit {
     font-size: 1rem;
-    width: 350px;
+    width: 500px;
     padding: .7rem 0;
     border: none;
     border-radius: .5rem;
@@ -1506,7 +1506,7 @@ button.next {
   outline: none;
   border: none;
   border-radius: 10px;
-  width: 350px;
+  width: 500px;
   font-size: 1.2rem;
   font-family: "Comic Neue";
   box-shadow: 2px 2px 5px gray;
@@ -1591,14 +1591,27 @@ button.next {
     text-align: center;
   }
 
+  #contact .middle .name .submit, 
+  #contact .middle .name .text-field {
+    width: 350px;
+  }
+
 }
 
 @media (max-width: 420px) {
 
-  #contact .middle .name,
+  #contact .middle .name .submit,
   #contact .middle .name .text-field {
-    width: 100%;
+    width: 270px;
+    padding: 10px;
+    font-size: 1rem;
   }
+
+  #contact .middle .name label{
+    font-size: 1rem;
+  }
+
+
 
 }
 
